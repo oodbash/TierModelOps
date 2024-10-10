@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <parameters>
+    <version>1.0.0</version>
+    <gpoBackupFolder>.\Backup</gpoBackupFolder>
+  </parameters>
+  <organizationalUnits>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-Services</name>
+      <distinguishedName>OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <permissions>
+        <permission>
+          <rights>GenericAll</rights>
+          <inheritance>All</inheritance>
+          <accessControl>Allow</accessControl>
+          <identityReference isWellKnown="false">Tier1NewServiceAdmins</identityReference>
+        </permission>
+      </permissions>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService</name>
+      <distinguishedName>OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService-Accounts</name>
+      <distinguishedName>OU=T1-NewService-Accounts,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService-Devices</name>
+      <distinguishedName>OU=T1-NewService-Devices,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService-Groups</name>
+      <distinguishedName>OU=T1-NewService-Groups,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService-Servers</name>
+      <distinguishedName>OU=T1-NewService-Servers,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService-Servers-SubService</name>
+      <distinguishedName>OU=T1-NewService-Servers-SubService,OU=T1-NewService-Servers,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+    <organizationalUnit>
+      <gpoInheritanceBlocked>false</gpoInheritanceBlocked>
+      <protectedFromAccidentalDeletion>true</protectedFromAccidentalDeletion>
+      <name>T1-NewService-Service Accounts</name>
+      <distinguishedName>OU=T1-NewService-Service Accounts,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+    </organizationalUnit>
+  </organizationalUnits>
+  <groups>
+    <group>
+      <name>Tier 1 NewService Admins</name>
+      <protectedFromAccidentalDeletion>false</protectedFromAccidentalDeletion>
+      <scope>Global</scope>
+      <distinguishedName>CN=Tier 1 NewService Admins,OU=T1-NewService-Groups,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+      <samAccountName>Tier1NewServiceAdmins</samAccountName>
+      <category>Security</category>
+    </group>
+    <group>
+      <name>Tier 1 NewService Servers</name>
+      <protectedFromAccidentalDeletion>false</protectedFromAccidentalDeletion>
+      <scope>Global</scope>
+      <distinguishedName>CN=Tier 1 NewService Servers,OU=T1-NewService-Groups,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+      <samAccountName>Tier1NewServiceServers</samAccountName>
+      <category>Security</category>
+    </group>
+    <group>
+      <name>Tier 1 NewService Service Accounts</name>
+      <protectedFromAccidentalDeletion>false</protectedFromAccidentalDeletion>
+      <scope>Global</scope>
+      <distinguishedName>CN=Tier 1 NewService Service Accounts,OU=T1-NewService-Groups,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+      <samAccountName>Tier1NewServiceServiceAccounts</samAccountName>
+      <category>Security</category>
+    </group>
+    <group>
+      <name>Tier 1 NewService Admins - SubService</name>
+      <protectedFromAccidentalDeletion>false</protectedFromAccidentalDeletion>
+      <scope>Global</scope>
+      <distinguishedName>CN=Tier 1 NewService Admins - SubService,OU=T1-NewService-Groups,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</distinguishedName>
+      <samAccountName>Tier1NewServiceAdmins-SubService</samAccountName>
+      <category>Security</category>
+    </group>
+  </groups>
+  <groupPolicies>
+    <groupPolicy>
+      <targetName>Enable Dynamic Access Control</targetName>
+      <links>
+        <link>
+          <enabled>true</enabled>
+          <enforced>false</enforced>
+          <order>1</order>
+          <container>OU=T1-Services,OU=Tier 1,OU=Admin</container>
+        </link>
+      </links>
+      <name>Enable Dynamic Access Control</name>
+      <gpoStatus>AllSettingsEnabled</gpoStatus>
+    </groupPolicy>
+    <groupPolicy>
+      <targetName>CR-AllowT1NewServiceAccess</targetName>
+      <links>
+        <link>
+          <enabled>true</enabled>
+          <enforced>false</enforced>
+          <order>1</order>
+          <container>OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</container>
+        </link>
+      </links>
+      <name>CR-AllowT1NewServiceAccess</name>
+      <gpoStatus>UserSettingsDisabled</gpoStatus>
+      <permissions>
+        <permission>
+          <rights>CreateChild DeleteChild ReadProperty WriteProperty Delete GenericExecute WriteDacl WriteOwner</rights>
+          <inheritance>All</inheritance>
+          <accessControl>Allow</accessControl>
+          <identityReference isWellKnown="false">Tier1Admins</identityReference>
+        </permission>
+        <permission>
+          <rights>CreateChild DeleteChild ReadProperty WriteProperty GenericExecute</rights>
+          <inheritance>All</inheritance>
+          <accessControl>Allow</accessControl>
+          <identityReference isWellKnown="false">Tier1NewServiceAdmins</identityReference>
+        </permission>
+      </permissions>
+    </groupPolicy>
+    <groupPolicy>
+      <targetName>CR-AllowT1NewServiceSubServiceAccess</targetName>
+      <links>
+        <link>
+          <enabled>true</enabled>
+          <enforced>false</enforced>
+          <order>1</order>
+          <container>OU=T1-NewService-Servers-SubService,OU=T1-NewService-Servers,OU=T1-NewService,OU=T1-Services,OU=Tier 1,OU=Admin</container>
+        </link>
+      </links>
+      <name>CR-AllowT1NewServiceSubServiceAccess</name>
+      <gpoStatus>UserSettingsDisabled</gpoStatus>
+    </groupPolicy>
+  </groupPolicies>
+</configuration>
